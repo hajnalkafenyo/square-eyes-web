@@ -42,3 +42,15 @@ footer{
     padding: 20px;
 }
 
+button {
+    background-color: #FA8F21;
+    color: #0A0B09;
+    border-radius: 4px;
+    text-transform: uppercase;
+    line-height: 16px;
+}
+
+a {
+    color:#FFFFFF;
+    text-decoration: none;
+}
