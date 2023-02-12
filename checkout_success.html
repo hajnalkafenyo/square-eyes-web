@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
     <header>
-        <ul class="header-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="aboutus.html">About us</a></li>
-        </ul>
+        <a href="index.html"><img src="images/logo.png" /></a>
+        <input class="side-menu" type="checkbox" id="side-menu" />
+        <label class="hamburger-icon" for="side-menu"></label>
+        <nav class="header-menu">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section>
@@ -28,7 +35,7 @@
             <p>Thank you for your order and your support</p>
             <p>Order confirmation has been sendt to your email address.</p>
         </section>
-        
+
     </main>
     <footer>
         <div>
@@ -40,8 +47,16 @@
             </ul>
             <p>All rights reserved &copy;2022</p>
         </div>
-        <div></div>
-        <div></div>
+        <div class="hide-on-mobile">
+            <a href="index.html"><img src="images/logo.png" /></a>
+        </div>
+        <ul class="social-media-icons">
+            <li><img src="images/_Facebook.png" /></li>
+            <li><img src="images/_Instagram.png" /></li>
+            <li><img src="images/_Twitter.png" /></li>
+            <li><img src="images/_YouTube.png" /></li>
+        </ul>
     </footer>
 </body>
+
 </html>

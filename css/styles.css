@@ -1,40 +1,143 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-body{
+body {
     font-family: 'Open Sans';
     background-color: #1F1F1F;
     color: #FFFFFF;
+    margin: 0;
 }
 
-header{
+header {
     background-color: #151515;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 65px;
 }
 
-.header-menu, h1, h2{
+
+.menu,
+h1,
+h2 {
     font-family: 'Bebas Neue';
+    list-style: none;
 }
 
-h1{
+/*header>div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}*/
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 0;
+    margin: 0;
+    gap: 60px;
+    align-items: center;
+    height: auto;
+}
+
+.header-menu {
+    width: 100%;
+    height: 100%;
+    max-height: 0;
+    position: fixed;
+    overflow: hidden;
+    background-color: #151515;
+    padding-top: 50px;
+}
+
+.menu a {
+    display: block;
+    font-size: 22px;
+}
+
+.hamburger-icon {
+    cursor: pointer;
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/hamburger-icon.png');
+    margin-top: 22px;
+    margin-right: 22px;
+}
+
+.side-menu {
+    display: none;
+}
+
+.side-menu:checked~nav {
+    max-height: 100%;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+    .header-menu {
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .menu {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .menu li {
+        float: left;
+    }
+
+    .hamburger-icon {
+        display: none;
+    }
+}
+
+
+h1 {
     font-size: 3rem;
 }
 
-footer{
-    background-color: #151515;
+h3 {
+    margin: 0;
 }
 
-.banner-image{
+.banner-image {
     width: 100%;
     height: 400px;
     object-fit: cover;
     object-position: 50% top;
 }
 
-.centered{
+#trailer-video {
+    padding: 10px 40px;
+}
+
+#trailer-video img {
+    width: 100%;
+}
+
+.movie-details {
+    display: flex;
+    gap: 20px;
+}
+
+.movie-details__poster {
+    height: 400px;
+}
+
+.centered {
     text-align: center;
 }
 
-.content-box-dark{
+.content-box-dark {
     background-color: #151515;
     border: #000000 solid 1px;
     border-radius: 10px;
@@ -42,15 +145,200 @@ footer{
     padding: 20px;
 }
 
-button {
+@media only screen and (max-width:767px) {
+    .content-box-dark {
+        margin: 10px;
+    }
+}
+
+.button {
     background-color: #FA8F21;
     color: #0A0B09;
     border-radius: 4px;
     text-transform: uppercase;
     line-height: 16px;
+    display: inline;
+    font-size: 14px;
+    padding: 5px;
+    border: 2px;
+    font-family: 'Open Sans';
 }
 
 a {
-    color:#FFFFFF;
+    color: #FFFFFF;
     text-decoration: none;
+}
+
+.genre {
+    text-decoration: none;
+    padding: 0;
+}
+
+.genre li {
+    border: 1px solid #FA8F21;
+    display: inline;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px;
+    color: #FA8F21;
+}
+
+.genre .adult {
+    border: 1px solid #DB382A;
+    display: inline;
+    color: #DB382A;
+}
+
+.rated {
+    list-style: none;
+    padding: 0;
+}
+
+.rated__element {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.movies {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.movie-poster {
+    width: 180px;
+    height: 100%;
+    border: #000000 1px solid;
+    border-radius: 10px;
+    background-color: #151515;
+    overflow: hidden;
+}
+
+.movie-poster img {
+    width: 100%;
+}
+
+.movie-poster h4 {
+    padding: 0;
+    margin: 0;
+}
+
+.movie-poster p {
+    padding: 0;
+    margin: 0;
+    font-size: 8pt;
+}
+
+.movie-poster__description {
+    padding: 5px;
+}
+
+@media only screen and (max-width:767px) {
+    .movie-poster {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .movie-poster img {
+        width: 180px;
+    }
+}
+
+.short-movie-details {
+    display: flex;
+    padding: 20px 0;
+}
+
+.short-movie-details__poster {
+    height: 200px;
+}
+
+.short-movie-details__poster img {
+    height: 100%;
+    margin: 0 80px;
+}
+
+@media only screen and (max-width:767px) {
+    .short-movie-details__poster img {
+        margin: 0 5px;
+    }
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width:767px) {
+    .checkout-form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.checkout-form__block {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.checkout-form__inputfield label {
+    display: block;
+    font-size: 8pt;
+}
+
+.checkout-form__inputfield input {
+    display: block;
+    height: 25px;
+    border-radius: 5px;
+    border: solid 1px #FA8F21;
+    background-color: #D0D0D0;
+    box-shadow: inset 0px 2px 8px 2px rgba(0, 0, 0, 0.25);
+    padding-left: 5px;
+}
+
+.vipps-image {
+    width: 150px;
+}
+
+.map {
+    width: 100%;
+}
+
+.address {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer {
+    background-color: #151515;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+footer li {
+    list-style: none;
+}
+
+.social-media-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.hide-on-mobile {
+    display: block;
+}
+
+@media only screen and (max-width:767px) {
+    .hide-on-mobile {
+        display: none;
+    }
 }

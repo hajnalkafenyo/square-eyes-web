@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,38 +12,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
     <header>
-        <ul class="header-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="aboutus.html">About us</a></li>
-        </ul>
+        <a href="index.html"><img src="images/logo.png" /></a>
+        <input class="side-menu" type="checkbox" id="side-menu" />
+        <label class="hamburger-icon" for="side-menu"></label>
+        <nav class="header-menu">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section class="content-box-dark">
-            <div><h1 class="centered">Contact</h1></div>
-            <div><h2>Address</h2>
-                <p>Postal address:
-                    Postbox 1123  1001 Oslo
-                    Norway/Norge
-                  </p>
-                <p>Location:
-                    Thomas Heftyes gate 16A  1433 Oslo
-                    Norway/Norge
-                  </p>
-                  
+            <div>
+                <h1 class="centered">Contact</h1>
+            </div>
+            <h2>Address</h2>
+            <div class="address">
+
+                <p>Postal address:<br>
+                    Postbox 1123<br> 1001 Oslo<br>
+                    Norway/Norge<br>
+                </p>
+                <p>Location:<br>
+                    Thomas Heftyes gate 16A<br> 1433 Oslo<br>
+                    Norway/Norge<br>
+                </p>
+
             </div>
             <div>
-                <img src="images/map.png" alt="A map detail about Oslo"  />
+                <img class="map" src="images/map.png" alt="A map detail about Oslo" />
             </div>
-            <div><h2>Phone</h2>
-                <p>Customer service:  +47 123 45 678 (M-F: 12:00-16:00)</p>
+            <div>
+                <h2>Phone</h2>
+                <p>Customer service: +47 123 45 678 (M-F: 12:00-16:00)</p>
 
-                <p>Press contact:  +47 987 65 432 (M-F: 12:00-14:00)</p>
+                <p>Press contact: +47 987 65 432 (M-F: 12:00-14:00)</p>
             </div>
         </section>
-        
+
     </main>
     <footer>
         <div>
@@ -54,8 +66,16 @@
             </ul>
             <p>All rights reserved &copy;2022</p>
         </div>
-        <div></div>
-        <div></div>
+        <div class="hide-on-mobile">
+            <a href="index.html"><img src="images/logo.png" /></a>
+        </div>
+        <ul class="social-media-icons">
+            <li><img src="images/_Facebook.png" /></li>
+            <li><img src="images/_Instagram.png" /></li>
+            <li><img src="images/_Twitter.png" /></li>
+            <li><img src="images/_YouTube.png" /></li>
+        </ul>
     </footer>
 </body>
+
 </html>
