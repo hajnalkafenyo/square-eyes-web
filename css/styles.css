@@ -377,3 +377,15 @@ footer li {
     width: 100%;
     height: 100%;
 }
+
+.cookie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cookie img {
+    max-width: 300px;
+}
