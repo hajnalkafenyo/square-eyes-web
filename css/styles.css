@@ -389,3 +389,7 @@ footer li {
 .cookie img {
     max-width: 300px;
 }
+
+.visually-hidden {
+    display: none;
+}
