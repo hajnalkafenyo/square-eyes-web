@@ -38,11 +38,20 @@
             <p>You can choose the best films in the dark winter nights.</p>
         </section>
 
-        <section>
+        <section id="main-content">
             <ul class="movies" id="movie-list-container"></ul>
             <p>
                 <a href="movies.html">Show all movies...</a>
             </p>
+        </section>
+
+        <section class="error-movie">
+            <p>
+                Unfortunatly an error happened, when we tried to fetch data from the backend 😞
+            </p>
+            <div>
+                <img src="images/error.jpg" alt="Huston we have a problem" />
+            </div>
         </section>
     </main>
     <footer>
@@ -66,7 +75,10 @@
                         alt="YouTube icon" /></a></li>
         </ul>
     </footer>
+    <script src="js/list.js"></script>
+    <script>
+        showMovies(5)
+    </script>
 </body>
-<script src="js/list.js"></script>
 
 </html>

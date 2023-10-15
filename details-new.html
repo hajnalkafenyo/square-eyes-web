@@ -28,47 +28,32 @@
         </nav>
     </header>
     <main>
-        <section class=" content-box-dark " id="trailer-video">
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/wlJwxYmfSuo"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-        </section>
-        <section class="content-box-dark movie-details">
 
-            <div><img class="movie-details__poster" src="images/Square_Eyes_Cover5.jpeg"
-                    alt="The movie poster of Sweetheart" />
+        <section id="movie-details" class="content-box-dark movie-details">
+
+            <div><img id="movie-poster" class="movie-details__poster" src="images/Square_Eyes_Cover1.jpeg"
+                    alt="The movie poster of Hobbs & Shaw" />
             </div>
             <div>
-                <h3>Sweetheart</h3>
-                <p>Jenn has washed ashore a small tropical island and it doesn't take her long to realize she's
-                    completely alone. She must spend her days not only surviving the elements, but must also fend off
-                    the malevolent force that comes out each night.</p>
-                <ul class="genre hide-on-mobile">
-                    <li>12+</li>
-                    <li>Horror</li>
-                    <li>Adventure</li>
-                    <li>Sci-fi</li>
-                </ul>
+                <h3 id="movie-title"></h3>
+                <p id="movie-description"></p>
+                <ul id="movie-tags" class="genre hide-on-mobile"></ul>
                 <ul class="rated">
-                    <li class="rated__element"><img src="images/IMDB_Logo_2016 1.png" alt="IMDB logo" />5.8/10</li>
-                    <li class="rated__element"><img src="images/certified_fresh.png" alt="Tomatometer" />50%</li>
-                    <li class="rated__element"><img src="images/aud_score-fresh.6c24d79faaf 1.png"
-                            alt="Rotten tomato audience score" />93%</li>
-
+                    <li class="rated__element"><img src="images/IMDB_Logo_2016 1.png" alt="IMDB logo" />
+                        <span id="movie-rating"></span>/10
+                    </li>
                 </ul>
-                <h6>Buy for: 199 kr</h6>
-                <h6>Rent for 3 days for: 59 kr</h6>
+                <h6 id="movie-price"></h6>
                 <div>
-                    <a href="checkout5.html" class="button">Buy now</a>
+                    <a href="checkout1.html" class="button">Buy now</a>
                     <button class="button">Add to cart</button>
                     <button class="button">Add to wishlist</button>
                 </div>
             </div>
         </section>
-
+        <section id="loading" class="content-box-dark centered">
+            <img src="./images/loading.svg" />
+        </section>
     </main>
     <footer>
         <div>
@@ -91,6 +76,7 @@
                         alt="YouTube icon" /></a></li>
         </ul>
     </footer>
+    <script src="js/details.js"></script>
 </body>
 
 </html>

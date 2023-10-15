@@ -3,7 +3,7 @@ const allMoviesEndpoint = "square-eyes"
 
 function movieCard(movie) {
     return `
-    <a href="details.html?id=${movie.id}">
+    <a href="details-new.html?id=${movie.id}">
 
                         <div class="movie-poster">
                             <img src="${movie.image}" alt="The movie poster of ${movie.title}" />
@@ -22,11 +22,20 @@ async function getData(url) {
     return data;
 }
 
-async function showMovies() {
-    const movieList = await getData(baseUrl + allMoviesEndpoint)
+async function showMovies(movieCount) {
+    let movieList
+    try {
+        movieList = await getData(baseUrl + allMoviesEndpoint)
+    } catch (e) {
+        console.error(":(", e);
+        const main = document.getElementById("main-content");
+        main.innerHTML = ``;
+        const section = document.getElementsByClassName("error-movie")[0];
+        section.style.display = "flex";
 
-    let movieCount = 5;
-    if (movieList.length <= movieCount) {
+        return
+    }
+    if (!movieCount || (movieList.length <= movieCount)) {
         movieCount = movieList.length;
     }
 
@@ -39,7 +48,6 @@ async function showMovies() {
     }
 }
 
-showMovies();
 
 
 

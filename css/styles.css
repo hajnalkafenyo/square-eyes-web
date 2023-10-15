@@ -140,6 +140,11 @@ h3 {
     gap: 20px;
 }
 
+#movie-details {
+    display: none;
+}
+
+
 @media only screen and (max-width:767px) {
     .movie-details {
         flex-direction: column;
@@ -397,5 +402,13 @@ footer li {
 }
 
 .visually-hidden {
+    display: none;
+}
+
+.error-movie {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     display: none;
 }
