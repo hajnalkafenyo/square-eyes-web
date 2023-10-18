@@ -22,6 +22,11 @@ async function getData(url) {
     return data;
 }
 
+const hideLoading = () => {
+    const loading = document.getElementsByClassName("loading")[0];
+    loading.style.display = "none";
+};
+
 async function showMovies(movieCount) {
     let movieList
     try {
@@ -32,9 +37,12 @@ async function showMovies(movieCount) {
         main.innerHTML = ``;
         const section = document.getElementsByClassName("error-movie")[0];
         section.style.display = "flex";
-
+        hideLoading();
         return
+    } finally {
+        hideLoading();
     }
+
     if (!movieCount || (movieList.length <= movieCount)) {
         movieCount = movieList.length;
     }
