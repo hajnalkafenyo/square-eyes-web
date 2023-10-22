@@ -26,7 +26,11 @@ async function showDetails() {
         console.error("Error happened when we tried to load the page")
         console.error("This is the error that happened", e)
         document.getElementById("loading").style.display = "none";
-        // TODO 
+        console.error(":(", e);
+        const main = document.getElementById("movie-details");
+        main.innerHTML = ``;
+        const section = document.getElementsByClassName("error-movie")[0];
+        section.style.display = "flex";
         return
     }
     console.log(movieData);
