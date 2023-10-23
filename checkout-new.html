@@ -28,28 +28,33 @@
         </nav>
     </header>
     <main>
-        <section class="content-box-dark short-movie-details">
-            <div class="short-movie-details__poster"><img src="images/Square_Eyes_Cover5.jpeg"
-                    alt="The poster of Sweetheart" />
+        <section id="movie-details" class="content-box-dark short-movie-details">
+            <div class="short-movie-details__poster">
+                <img src="" id="movie-poster" alt="Movie Poster" />
             </div>
             <div class="short-movie-details__text">
-                <h3>Sweetheart</h3>
-                <p>Jenn has washed ashore a small tropical island and it doesn't take her long to realize she's
-                    completely alone. She must spend her days not only surviving the elements, but must also fend off
-                    the malevolent force that comes out each night.</p>
-                <ul class="genre hide-on-mobile">
-                    <li>12+</li>
-                    <li>Horror</li>
-                    <li>Adventure</li>
-                    <li>Sci-fi</li>
+                <h3 id="movie-title"></h3>
+                <p id="movie-description"></p>
+                <ul id="movie-tags" class="genre hide-on-mobile">
                 </ul>
-                <div class="rated__element hide-on-mobile">
-                    <img src="images/IMDB_Logo_2016 1.png" alt="IMDB logo" />5.8/10
-                </div>
+                <ul class="rated hide-on-mobile">
+                    <li class="rated__element"><img src="images/IMDB_Logo_2016 1.png" alt="IMDB logo" />
+                        <span id="movie-rating"></span>/10
+                    </li>
+                </ul>
+                <h4 id="movie-price"></h4>
             </div>
 
         </section>
-        <section class="content-box-dark">
+        <section class="error-movie">
+            <p>
+                Unfortunatly an error happened, when we tried to fetch data from the backend 😞
+            </p>
+            <div>
+                <img src="images/error.jpg" alt="Huston we have a problem" />
+            </div>
+        </section>
+        <section id="checkout-form" class="content-box-dark">
             <form>
                 <div class="checkout-form">
                     <div class="checkout-form__block">
@@ -120,6 +125,7 @@
                         alt="YouTube icon" /></a></li>
         </ul>
     </footer>
+    <script src="js/checkout.js"></script>
 </body>
 
 </html>

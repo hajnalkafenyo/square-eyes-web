@@ -25,7 +25,7 @@ async function showDetails() {
     } catch (e) {
         console.error("Error happened when we tried to load the page")
         console.error("This is the error that happened", e)
-        document.getElementById("loading").style.display = "none";
+        //document.getElementById("loading").style.display = "none";
         console.error(":(", e);
         const main = document.getElementById("movie-details");
         main.innerHTML = ``;
@@ -37,7 +37,7 @@ async function showDetails() {
 
     document.getElementById("movie-title").innerHTML = movieData.title
     document.getElementById("movie-description").innerHTML = movieData.description
-    document.getElementById("movie-checkout").href = `checkout-new.html?id=${movieData.id}`
+
     var tags = []
     tags.push(movieData.genre)
     tags = tags.concat(movieData.tags)
@@ -47,14 +47,15 @@ async function showDetails() {
     document.getElementById("movie-rating").innerHTML = movieData.rating
 
     if (movieData.onSale) {
-        document.getElementById("movie-price").innerHTML = `On sale for: <s>${movieData.price} kr</s> ${movieData.discountedPrice} kr`;
+        document.getElementById("movie-price").innerHTML = `On sale price: <s>${movieData.price} kr</s> ${movieData.discountedPrice} kr`;
     } else {
-        document.getElementById("movie-price").innerHTML = `Buy for: ${movieData.price} kr`;
+        document.getElementById("movie-price").innerHTML = `Price: ${movieData.price} kr`;
     }
 
     document.getElementById("movie-poster").src = movieData.image;
     document.getElementById("movie-details").style.display = "flex";
-    document.getElementById("loading").style.display = "none";
+    document.getElementById("checkout-form").style.display = "block";
+    //document.getElementById("loading").style.display = "none";
 
 }
 
