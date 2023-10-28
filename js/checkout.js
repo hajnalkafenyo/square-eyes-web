@@ -25,7 +25,7 @@ async function showDetails() {
     } catch (e) {
         console.error("Error happened when we tried to load the page")
         console.error("This is the error that happened", e)
-        //document.getElementById("loading").style.display = "none";
+        document.getElementById("loading").style.display = "none";
         console.error(":(", e);
         const main = document.getElementById("movie-details");
         main.innerHTML = ``;
@@ -55,7 +55,7 @@ async function showDetails() {
     document.getElementById("movie-poster").src = movieData.image;
     document.getElementById("movie-details").style.display = "flex";
     document.getElementById("checkout-form").style.display = "block";
-    //document.getElementById("loading").style.display = "none";
+    document.getElementById("loading").style.display = "none";
 
 }
 
