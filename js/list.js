@@ -52,14 +52,5 @@ async function showMovies(movieCount) {
         const movie = movieList[i]
         const cardHtml = movieCard(movie)
         container.innerHTML += `<li>${cardHtml}</li>`
-        console.log(i, movie, cardHtml)
     }
 }
-
-
-
-
-// After the page is loaded:
-// 1. Download (fetch) the list of all movies
-// 2. For all the elements we generate a movie card (json --> html)
-// 3. We put all these cards (html) to the webpage

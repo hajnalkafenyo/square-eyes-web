@@ -3,13 +3,11 @@
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('id');
 
-console.log(myParam);
 
 const baseUrl = "https://api.noroff.dev/api/v1/"
 const detailsEndpoint = "square-eyes/" + myParam
 const fullUrl = baseUrl + detailsEndpoint
 
-console.log(fullUrl);
 
 async function getData(url) {
     const response = await fetch(url);
@@ -26,14 +24,13 @@ async function showDetails() {
         console.error("Error happened when we tried to load the page")
         console.error("This is the error that happened", e)
         document.getElementById("loading").style.display = "none";
-        console.error(":(", e);
+        console.error(e);
         const main = document.getElementById("movie-details");
         main.innerHTML = ``;
         const section = document.getElementsByClassName("error-movie")[0];
         section.style.display = "flex";
         return
     }
-    console.log(movieData);
 
     document.getElementById("movie-title").innerHTML = movieData.title
     document.getElementById("movie-description").innerHTML = movieData.description
