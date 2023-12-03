@@ -132,6 +132,10 @@ h3 {
     object-position: 50% top;
 }
 
+.banner-checkout {
+    object-position: 50% 42%;
+}
+
 #trailer-video {
     padding: 10px 40px;
 }
