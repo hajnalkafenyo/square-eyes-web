@@ -251,14 +251,13 @@ a {
 }
 
 .movie-poster h4 {
-    padding: 0;
+    padding: 0 0 12px 0;
     margin: 0;
 }
 
 .movie-poster p {
     padding: 0;
     margin: 0;
-    font-size: 8pt;
 }
 
 .movie-poster__description {
