@@ -1,6 +1,9 @@
 const baseUrl = "https://api.noroff.dev/api/v1/"
 const allMoviesEndpoint = "square-eyes"
 
+let movieList;
+const container = document.getElementById("movie-list-container")
+
 function movieCard(movie) {
     return `
     <a href="details-new.html?id=${movie.id}">
@@ -28,7 +31,6 @@ const hideLoading = () => {
 };
 
 async function showMovies(movieCount) {
-    let movieList
     try {
         movieList = await getData(baseUrl + allMoviesEndpoint)
     } catch (e) {
@@ -47,10 +49,26 @@ async function showMovies(movieCount) {
         movieCount = movieList.length;
     }
 
-    const container = document.getElementById("movie-list-container")
     for (let i = 0; i < movieCount; i++) {
         const movie = movieList[i]
         const cardHtml = movieCard(movie)
         container.innerHTML += `<li>${cardHtml}</li>`
     }
+}
+
+function onSearchFieldChange(e) {
+    const inputValue = e.target.value.toLowerCase()
+    container.innerHTML = ""
+    for (let i = 0; i < movieList.length; i++) {
+        const movie = movieList[i]
+        if (movie.title.toLowerCase().includes(inputValue)) {
+            const cardHtml = movieCard(movie)
+            container.innerHTML += `<li>${cardHtml}</li>`
+        }
+    }
+}
+
+const searchField = document.getElementById('movie-search-text')
+if (searchField) {
+    searchField.addEventListener("input", onSearchFieldChange)
 }
