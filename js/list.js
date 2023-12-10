@@ -1,7 +1,8 @@
 const baseUrl = "https://api.noroff.dev/api/v1/"
 const allMoviesEndpoint = "square-eyes"
 
-let movieList;
+let movieList = [];
+let filteredList = [...movieList]
 const container = document.getElementById("movie-list-container")
 
 function movieCard(movie) {
@@ -19,6 +20,17 @@ function movieCard(movie) {
    `
 }
 
+function renderMovieList(movies) {
+    container.innerHTML = ""
+    for (let i = 0; i < movies.length; i++) {
+        const movie = movies[i]
+
+        const cardHtml = movieCard(movie)
+        container.innerHTML += `<li>${cardHtml}</li>`
+
+    }
+}
+
 async function getData(url) {
     const response = await fetch(url);
     const data = await response.json();
@@ -33,6 +45,7 @@ const hideLoading = () => {
 async function showMovies(movieCount) {
     try {
         movieList = await getData(baseUrl + allMoviesEndpoint)
+        filteredList = [...movieList]
     } catch (e) {
         console.error(":(", e);
         const main = document.getElementById("main-content");
@@ -49,26 +62,40 @@ async function showMovies(movieCount) {
         movieCount = movieList.length;
     }
 
-    for (let i = 0; i < movieCount; i++) {
-        const movie = movieList[i]
-        const cardHtml = movieCard(movie)
-        container.innerHTML += `<li>${cardHtml}</li>`
-    }
+    renderMovieList(movieList.slice(0, movieCount))
 }
 
 function onSearchFieldChange(e) {
     const inputValue = e.target.value.toLowerCase()
-    container.innerHTML = ""
-    for (let i = 0; i < movieList.length; i++) {
-        const movie = movieList[i]
-        if (movie.title.toLowerCase().includes(inputValue)) {
-            const cardHtml = movieCard(movie)
-            container.innerHTML += `<li>${cardHtml}</li>`
-        }
-    }
+    filteredList = movieList.filter((movie) => movie.title.toLowerCase().includes(inputValue))
+    renderMovieList(filteredList)
 }
 
 const searchField = document.getElementById('movie-search-text')
 if (searchField) {
     searchField.addEventListener("input", onSearchFieldChange)
+}
+
+function onOrderFieldChange(e) {
+    const selectedOrder = e.target.value
+
+    filteredList.sort((a, b) => {
+        switch (selectedOrder) {
+            case "name":
+                return a.title === b.title ? 0 : a.title > b.title ? 1 : -1
+            case "score":
+                return parseFloat(b.rating) - parseFloat(a.rating)
+            case "price":
+                return a.discountedPrice - b.discountedPrice
+            case "released":
+                return parseInt(a.released) - parseInt(b.released)
+        }
+    })
+    renderMovieList(filteredList);
+
+}
+
+const orderField = document.getElementById('movie-order-select')
+if (orderField) {
+    orderField.addEventListener("change", onOrderFieldChange)
 }

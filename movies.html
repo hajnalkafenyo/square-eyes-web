@@ -50,6 +50,16 @@
                 <label for="movie-search-text">Search by name</label>
                 <input type="search" name="movie-search-text" id="movie-search-text" />
             </div>
+            <div class="checkout-form__inputfield">
+                <label for="movie-order-select">Order by</label>
+                <select name="movie-order-select" id="movie-order-select">
+                    <option disabled selected value="">-- please select --</option>
+                    <option value="name">Name (a-z)</option>
+                    <option value="score">Score (highest first)</option>
+                    <option value="price">Price (cheapest first)</option>
+                    <option value="released">Release year (newest first)</option>
+                </select>
+            </div>
         </section>
         <section id="main-content">
             <ul class="movies" id="movie-list-container"></ul>
