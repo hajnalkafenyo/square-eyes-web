@@ -428,3 +428,9 @@ footer li {
     align-items: center;
     display: none;
 }
+
+.subscriber_field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
