@@ -14,9 +14,9 @@ async function getData(url) {
     return data;
 }
 
+let movieData;
 
 async function showDetails() {
-    let movieData;
     try {
         movieData = await getData(fullUrl);
     } catch (e) {
@@ -33,7 +33,6 @@ async function showDetails() {
 
     document.getElementById("movie-title").innerHTML = movieData.title
     document.getElementById("movie-description").innerHTML = movieData.description
-    document.getElementById("movie-checkout").href = `checkout-new.html?id=${movieData.id}`
     var tags = []
     tags.push(movieData.genre)
     tags = tags.concat(movieData.tags)
@@ -55,3 +54,14 @@ async function showDetails() {
 }
 
 showDetails();
+
+const addToCartButton = document.getElementById('add-to-cart-button')
+addToCartButton.addEventListener('click', () => {
+    addToCart(movieData);
+    updateShoppingCartCount();
+});
+
+
+
+
+updateShoppingCartCount()

@@ -24,12 +24,13 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+    <script src="./js/cart.js"></script>
 </head>
 
 <body>
     <header>
-        <a href="/"><img src="images/logo.png" alt="Square Eyes logo" /></a>
-        <input aria-label="Hamburger menu" class="side-menu" type="checkbox" id="side-menu" />
+        <a href="index.html"><img src="images/logo.png" alt="Square Eyes logo" /></a>
+        <input class="side-menu" type="checkbox" id="side-menu" />
         <label class="hamburger-icon" for="side-menu"><span class="visually-hidden">Hamburger menu</span></label>
         <nav class="header-menu">
             <ul class="menu">
@@ -39,6 +40,10 @@
                 <li><a href="aboutus.html">About us</a></li>
             </ul>
         </nav>
+        <div class="shopping-cart">
+            <a href="cart.html"> <img src="./images/shopping-trolley-icon.svg" alt="Shopping cart" /></a>
+            <span id="shopping-cart-count"></span>
+        </div>
     </header>
     <main>
         <section>
@@ -93,7 +98,8 @@
     </footer>
     <script src="js/list.js"></script>
     <script>
-        showMovies(5)
+        showMovies(5);
+        updateShoppingCartCount();
     </script>
 </body>
 

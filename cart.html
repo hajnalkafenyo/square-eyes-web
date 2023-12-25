@@ -45,23 +45,9 @@
         </div>
     </header>
     <main>
-        <section id="movie-details" class="content-box-dark short-movie-details">
-            <div class="short-movie-details__poster">
-                <img src="" id="movie-poster" alt="Movie Poster" />
-            </div>
-            <div class="short-movie-details__text">
-                <h3 id="movie-title"></h3>
-                <p id="movie-description"></p>
-                <ul id="movie-tags" class="genre hide-on-mobile">
-                </ul>
-                <ul class="rated hide-on-mobile">
-                    <li class="rated__element"><img src="images/IMDB_Logo_2016 1.png" alt="IMDB logo" />
-                        <span id="movie-rating"></span>/10
-                    </li>
-                </ul>
-                <h4 id="movie-price"></h4>
-            </div>
-        </section>
+        <div id="movie-cart-list">
+
+        </div>
         <section id="loading" class="content-box-dark centered">
             <img src="./images/loading.svg" />
         </section>
@@ -73,8 +59,19 @@
                 <img src="images/error.jpg" alt="Huston we have a problem" />
             </div>
         </section>
+        <section id="empty-form" class="content-box-dark">
+            <h4>Your cart is empty</h4>
+            <p>
+                Please go to the <a href="movies.html">Movies</a> page and choose a movie 😊
+            </p>
+        </section>
         <section id="checkout-form" class="content-box-dark">
+
+            <h4>Payment details</h4>
+            <p id="cart-price"></p>
+
             <form>
+
                 <div class="checkout-form">
                     <div class="checkout-form__block">
                         <div class="checkout-form__inputfield">

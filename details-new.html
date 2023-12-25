@@ -23,6 +23,7 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+    <script src="./js/cart.js"></script>
 </head>
 
 <body>
@@ -38,6 +39,10 @@
                 <li><a href="aboutus.html">About us</a></li>
             </ul>
         </nav>
+        <div class="shopping-cart">
+            <a href="cart.html"> <img src="./images/shopping-trolley-icon.svg" alt="Shopping cart" /></a>
+            <span id="shopping-cart-count"></span>
+        </div>
     </header>
     <main>
 
@@ -57,8 +62,7 @@
                 </ul>
                 <h6 id="movie-price"></h6>
                 <div>
-                    <a href="checkout-new.html" id="movie-checkout" class="button">Buy now</a>
-                    <button class="button">Add to cart</button>
+                    <button class="button" id="add-to-cart-button">Add to cart</button>
                     <button class="button">Add to wishlist</button>
                 </div>
             </div>

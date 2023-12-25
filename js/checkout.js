@@ -17,7 +17,7 @@ async function getData(url) {
 
 
 async function showDetails() {
-    let movieData;
+    /*let movieData;
     try {
         movieData = await getData(fullUrl);
     } catch (e) {
@@ -51,9 +51,13 @@ async function showDetails() {
 
     document.getElementById("movie-poster").src = movieData.image;
     document.getElementById("movie-details").style.display = "flex";
+    */
+    updateShoppingCartCount()
+
     document.getElementById("checkout-form").style.display = "block";
     document.getElementById("loading").style.display = "none";
 
 }
 
 showDetails();
+
