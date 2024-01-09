@@ -134,6 +134,7 @@ h3 {
     height: 400px;
     object-fit: cover;
     object-position: 50% top;
+    border-radius: 10px;
 }
 
 .banner-checkout {
