@@ -24,6 +24,7 @@
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
     <script src="./js/cart.js"></script>
+
 </head>
 
 <body>
@@ -34,7 +35,6 @@
         <nav class="header-menu">
             <ul class="menu">
                 <li><a href="">My profile</a></li>
-                <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="aboutus.html">About us</a></li>
             </ul>
@@ -80,10 +80,11 @@
             <div>
                 <h2 class="centered">Subscribe</h2>
             </div>
-            <div class="checkout-form__inputfield">
+            <div id="error-Email" class="checkout-form__inputfield">
                 <p>I want to subscribe to the newsletter</p>
                 <label for="email">Please enter your e-mail</label>
                 <input type="email" name="email" id="email" />
+                <span id="email-error"></span>
                 <div class="subscriber_field">
                     <input type="checkbox" id="newsletter" name="newsletter" checked />
                     <label for="newsletter">I accept the privacy policy</label>
@@ -116,6 +117,7 @@
     <script>
         updateShoppingCartCount();
     </script>
+    <script src="./js/contact.js"></script>
 </body>
 
 </html>

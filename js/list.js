@@ -20,6 +20,10 @@ function movieCard(movie) {
    `
 }
 
+/**
+ * this function puts the movies in the parameter to the html document
+ * @param {*} movies 
+ */
 function renderMovieList(movies) {
     container.innerHTML = ""
     for (let i = 0; i < movies.length; i++) {
@@ -92,10 +96,21 @@ function onOrderFieldChange(e) {
         }
     })
     renderMovieList(filteredList);
-
 }
 
 const orderField = document.getElementById('movie-order-select')
 if (orderField) {
     orderField.addEventListener("change", onOrderFieldChange)
+}
+
+function onCategoryFilterChange(e) {
+    const categoryFilter = e.target.value
+    console.log(categoryFilter);
+    filteredList = movieList.filter((movie) => movie.genre == categoryFilter)
+    renderMovieList(filteredList)
+}
+
+const categoryField = document.getElementById('movie-category-select')
+if (categoryField) {
+    categoryField.addEventListener("change", onCategoryFilterChange)
 }

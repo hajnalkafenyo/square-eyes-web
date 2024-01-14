@@ -34,7 +34,6 @@
         <nav class="header-menu">
             <ul class="menu">
                 <li><a href="">My profile</a></li>
-                <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="aboutus.html">About us</a></li>
             </ul>
@@ -45,49 +44,70 @@
         </div>
     </header>
     <main>
-        <section>
-            <h1>Square-eyes Home Cinema</h1>
-            <p>Here you find all our movies, each one a gateway to endless entertainment. When you choose a film from
-                Square Eyes AS, you're not just making a purchase, you're gaining unlimited access to watch it anytime,
-                as often as you wish. Revel in the freedom of viewing your favorite movies on your own terms, without
-                any restrictions. Plus, with our customer-friendly refund policy, you can confidently explore new titles
-                knowing that refunds are available if less than 40% of the movie has been watched. Discover, enjoy, and
-                revisit the vast collection of high-quality videos that we proudly offer, all designed to bring you
-                closer to the world of movie creators. </p>
+        <section class="main-section">
+            <section>
+                <h1>Square-eyes Home Cinema</h1>
+                <p>Here you find all our movies, each one a gateway to endless entertainment. When you choose a film
+                    from
+                    Square Eyes AS, you're not just making a purchase, you're gaining unlimited access to watch it
+                    anytime,
+                    as often as you wish. Revel in the freedom of viewing your favorite movies on your own terms,
+                    without
+                    any restrictions. Plus, with our customer-friendly refund policy, you can confidently explore new
+                    titles
+                    knowing that refunds are available if less than 40% of the movie has been watched. Discover, enjoy,
+                    and
+                    revisit the vast collection of high-quality videos that we proudly offer, all designed to bring you
+                    closer to the world of movie creators. </p>
+            </section>
+            <section class="checkout-form__inputfields">
+                <div class="checkout-form__inputfield">
+                    <label for="movie-search-text">Search by name</label>
+                    <input type="search" name="movie-search-text" id="movie-search-text" />
+                </div>
+                <div class="checkout-form__inputfield">
+                    <label for="movie-order-select">Order by</label>
+                    <select name="movie-order-select" id="movie-order-select">
+                        <option disabled selected value="">-- please select --</option>
+                        <option value="category">Category (a-z)</option>
+                        <option value="name">Name (a-z)</option>
+                        <option value="score">Score (highest first)</option>
+                        <option value="price">Price (cheapest first)</option>
+                        <option value="released">Release year (newest first)</option>
+                    </select>
+                </div>
+                <div class="checkout-form__inputfield">
+                    <label for="movie-category-select">Category</label>
+                    <select name="movie-category-select" id="movie-category-select">
+                        <option disabled selected value="">-- please select --</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Action">Action</option>
+                        <option value="Kids">Kids</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Comedy">Comedy</option>
+                    </select>
+                </div>
+            </section>
         </section>
-        <section>
-            <div class="checkout-form__inputfield">
-                <label for="movie-search-text">Search by name</label>
-                <input type="search" name="movie-search-text" id="movie-search-text" />
-            </div>
-            <div class="checkout-form__inputfield">
-                <label for="movie-order-select">Order by</label>
-                <select name="movie-order-select" id="movie-order-select">
-                    <option disabled selected value="">-- please select --</option>
-                    <option value="name">Name (a-z)</option>
-                    <option value="score">Score (highest first)</option>
-                    <option value="price">Price (cheapest first)</option>
-                    <option value="released">Release year (newest first)</option>
-                </select>
-            </div>
-        </section>
-        <section id="main-content">
-            <ul class="movies" id="movie-list-container"></ul>
-        </section>
-        <section class="loading">
-            <p>
-                Loading
-                <img src="images/loading.svg" alt="Loading animation" />
-            </p>
-        </section>
+        <section class="film-section">
+            <section id="main-content">
+                <ul class="movies" id="movie-list-container"></ul>
+            </section>
+            <section class="loading">
+                <p>
+                    Loading
+                    <img src="images/loading.svg" alt="Loading animation" />
+                </p>
+            </section>
 
-        <section class="error-movie">
-            <p>
-                Unfortunatly an error happened, when we tried to fetch data from the backend 😞
-            </p>
-            <div>
-                <img src="images/error.jpg" alt="Huston we have a problem" />
-            </div>
+            <section class="error-movie">
+                <p>
+                    Unfortunatly an error happened, when we tried to fetch data from the backend 😞
+                </p>
+                <div>
+                    <img src="images/error.jpg" alt="Huston we have a problem" />
+                </div>
+            </section>
         </section>
     </main>
     <footer>

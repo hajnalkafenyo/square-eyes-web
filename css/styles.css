@@ -123,6 +123,7 @@ h2 {
 
 h1 {
     font-size: 3rem;
+    margin: 5px;
 }
 
 h3 {
@@ -201,6 +202,12 @@ h3 {
     cursor: pointer;
 }
 
+#add-to-wishlist-button {
+    background-color: #151515;
+    color: #FA8F21;
+    border: #FA8F21 2px solid;
+}
+
 a {
     color: #FFFFFF;
     text-decoration: none;
@@ -246,10 +253,11 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     margin: 10px;
+
 }
 
 .movie-poster {
-    width: 180px;
+    width: 190px;
     height: 100%;
     border: #000000 1px solid;
     border-radius: 10px;
@@ -257,8 +265,13 @@ a {
     overflow: hidden;
 }
 
+.movie-poster:hover {
+    width: 192px;
+}
+
 .movie-poster img {
     width: 100%;
+    object-fit: cover;
 }
 
 .movie-poster h4 {
@@ -293,6 +306,7 @@ a {
     .movie-poster p {
         font-size: 20px;
     }
+
 }
 
 .short-movie-details {
@@ -349,6 +363,12 @@ a {
     padding-left: 5px;
 }
 
+.checkout-form__inputfields {
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .vipps-image {
     width: 150px;
 }
@@ -378,10 +398,16 @@ footer li {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 
 .hide-on-mobile {
     display: block;
+}
+
+.social-media-icon:hover {
+    background-color: #FA8F21;
+
 }
 
 @media only screen and (max-width:767px) {
@@ -462,4 +488,8 @@ footer li {
 
 #empty-form {
     display: none;
+}
+
+#email-error {
+    color: #DB382A;
 }

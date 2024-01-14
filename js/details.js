@@ -62,6 +62,4 @@ addToCartButton.addEventListener('click', () => {
 });
 
 
-
-
 updateShoppingCartCount()
