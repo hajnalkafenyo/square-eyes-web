@@ -4,12 +4,9 @@ function validateEmail(e) {
     const emailError = document.getElementById('email-error')
     if (reg.test(inputValue) == false) {
         emailError.innerText = 'Looks like this is not an email'
-        //        errorEmail.innerText = 'Looks like this is not an email';
         return false;
     } else {
-        // e.preventDefault();
         emailError.innerText = ""
-        //        errorEmail.innerText = "";
         return true;
     }
 }

@@ -1,15 +1,3 @@
-
-/*
-[
-    {
-        ...
-    },
-    {
-        ...
-    }
-]
-*/
-
 function addToCart(movie) {
     // Current content of the cart
     const items = getCartItems();
