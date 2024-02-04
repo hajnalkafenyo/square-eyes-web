@@ -1,5 +1,4 @@
-const baseUrl = 'https://api.noroff.dev/api/v1/';
-const allMoviesEndpoint = 'square-eyes';
+const baseUrl = 'https://hajnalka-fenyo-square-eyes.flywheelsites.com/wp-json/wc/store/products';
 
 let movieList = [];
 let filteredList = [...movieList];
@@ -35,9 +34,24 @@ function renderMovieList(movies) {
 }
 
 async function getData(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, { "no-cors": true });
   const data = await response.json();
-  return data;
+  return data.map((d) => ({
+    id: d.id,
+    description: d.description,
+    image: d.images[0].src,
+    title: d.name,
+    alt: d.images[0].alt,
+    discountedPrice: d.prices.sale_price/100,
+    favorite: false,
+    genre: d.categories[0].name,
+    onSale: d.on_sale,
+    price: d.prices.regular_price/100,
+    rating: d.attributes.find((e) => e.taxonomy=="pa_rating").terms[0].name,
+    released: d.attributes.find((e) => e.taxonomy=="pa_released").terms[0].name,
+    tags: d.tags,
+
+  }))
 }
 
 const hideLoading = () => {
@@ -52,7 +66,7 @@ const hideLoading = () => {
  */
 async function showMovies(movieCount) {
   try {
-    movieList = await getData(baseUrl + allMoviesEndpoint);
+    movieList = await getData(baseUrl);
     filteredList = [...movieList];
   } catch (e) {
     console.error(':(', e);

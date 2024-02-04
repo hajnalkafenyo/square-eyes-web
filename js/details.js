@@ -1,14 +1,28 @@
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('id');
 
-const baseUrl = 'https://api.noroff.dev/api/v1/';
-const detailsEndpoint = 'square-eyes/' + myParam;
+const baseUrl = 'https://hajnalka-fenyo-square-eyes.flywheelsites.com/wp-json/wc/store/products';
+const detailsEndpoint = '/' + myParam;
 const fullUrl = baseUrl + detailsEndpoint;
 
 async function getData(url) {
   const response = await fetch(url);
-  const data = await response.json();
-  return data;
+  const d = await response.json();
+  return {
+    id: d.id,
+    description: d.description,
+    image: d.images[0].src,
+    title: d.name,
+    alt: d.images[0].alt,
+    discountedPrice: d.prices.sale_price/100,
+    favorite: false,
+    genre: d.categories[0].name,
+    onSale: d.on_sale,
+    price: d.prices.regular_price/100,
+    rating: d.attributes.find((e) => e.taxonomy=="pa_rating").terms[0].name,
+    released: d.attributes.find((e) => e.taxonomy=="pa_released").terms[0].name,
+    tags: d.tags,
+  }
 }
 
 let movieData;
